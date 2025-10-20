@@ -1,0 +1,32 @@
+# --------------------------------------------------------------------
+# 🟢 HER YERDEN
+# --------------------------------------------------------------------
+
+## Uzantı
+*.iml
+
+## Dosya
+.DS_Store
+gradle.properties
+settings.gradle.kts
+
+## Klasör
+.gradle/
+.externalNativeBuild/
+.cxx/
+.idea/
+.kotlin/
+res/
+schemas/
+
+# --------------------------------------------------------------------
+# 🟢 BİR YERDEN
+#    (sadece ana dizin için başına / konulur)
+# --------------------------------------------------------------------
+
+## Dosya
+/local.properties
+
+## Klasör
+/build/
+/captures/
