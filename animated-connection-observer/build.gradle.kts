@@ -5,10 +5,11 @@ plugins {
     // compose
     alias(libs.plugins.kotlin.compose)
 
-    // publish için
-    id("org.jetbrains.dokka") version "1.9.20"
-    id("maven-publish")
-    id("signing")
+    // vanniktech maven publish
+    alias(libs.plugins.vanniktech.maven.publish)
+
+    // dokka
+    alias(libs.plugins.dokka)
 }
 
 group = "com.toktasoft"
@@ -39,14 +40,6 @@ android {
     buildFeatures {
         compose = true
     }
-
-    // publishing
-    // AGP, yayınlanabilir "release" component’ini buradan üretir
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-        }
-    }
 }
 
 dependencies {
@@ -63,66 +56,37 @@ dependencies {
     implementation(libs.androidx.material.icons.extended)
 }
 
-// Dokka javadoc jar (gerçek dokümantasyonu bununla ekliyoruz)
-tasks.register<Jar>("dokkaJavadocJar") {
-    dependsOn(tasks.dokkaJavadoc)
-    from(tasks.dokkaJavadoc.get().outputDirectory)
-    archiveClassifier.set("javadoc")
-}
+mavenPublishing {
+    coordinates("com.toktasoft", "animated-connection-observer", version.toString())
 
-publishing {
-    repositories {
-        maven {
-            name = "staging"
-            url = layout.buildDirectory.dir("staging-repo").get().asFile.toURI()
-        }
-    }
-}
-
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                from(components["release"])
-                artifact(tasks["dokkaJavadocJar"])
-                artifactId = "animated-connection-observer"
-
-                pom {
-                    name.set("Animated Connection Observer")
-                    description.set("A lifecycle-aware, animated connectivity indicator built with Jetpack Compose.")
-                    url.set("https://github.com/mustafatoktas/A.LIB_AnimatedConnectionObserver")
-
-                    licenses {
-                        license {
-                            name.set("GNU General Public License v3.0")
-                            url.set("https://www.gnu.org/licenses/gpl-3.0.html")
-                            distribution.set("repo")
-                        }
-                    }
-                    developers {
-                        developer {
-                            id.set("mustafatoktas")
-                            name.set("Mustafa TOKTAŞ")
-                            url.set("https://toktasoft.com")
-                        }
-                    }
-                    scm {
-                        url.set("https://github.com/mustafatoktas/A.LIB_AnimatedConnectionObserver")
-                        connection.set("scm:git:https://github.com/mustafatoktas/A.LIB_AnimatedConnectionObserver.git")
-                        developerConnection.set("scm:git:ssh://git@github.com/mustafatoktas/A.LIB_AnimatedConnectionObserver.git")
-                    }
-                }
+    pom {
+        name.set("Animated Connection Observer")
+        description.set("A lifecycle-aware, animated connectivity indicator built with Jetpack Compose.")
+        inceptionYear.set("2025")
+        url.set("https://github.com/mustafatoktas/A.LIB_AnimatedConnectionObserver")
+        licenses {
+            license {
+                name.set("GNU General Public License v3.0")
+                url.set("https://www.gnu.org/licenses/gpl-3.0.html")
+                distribution.set("repo")
             }
         }
+        developers {
+            developer {
+                id.set("mustafatoktas")
+                name.set("Mustafa TOKTAŞ")
+                url.set("https://toktasoft.com")
+                email.set("info@mustafatoktas.com")
+            }
+        }
+        scm {
+            url.set("https://github.com/mustafatoktas/A.LIB_AnimatedConnectionObserver")
+            connection.set("scm:git:https://github.com/mustafatoktas/A.LIB_AnimatedConnectionObserver.git")
+            developerConnection.set("scm:git:ssh://git@github.com/mustafatoktas/A.LIB_AnimatedConnectionObserver.git")
+        }
+        issueManagement {
+            system.set("GitHub Issues")
+            url.set("https://github.com/mustafatoktas/A.LIB_AnimatedConnectionObserver/issues")
+        }
     }
-
-    // Publication'ı oluşturduktan sonra imzala
-    signing {
-        publishing.publications.named("release").configure { sign(this) }
-    }
-}
-
-signing {
-    // GPG komutunu kullan
-    useGpgCmd()
 }

@@ -2,7 +2,9 @@ package com.toktasoft.animatedconnectionobserver.presentation.main
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -46,13 +48,13 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun MainRoute() {
-    val isConnected by observeConnectivity()
+    val isConnected by observeConnectivity()    // this composable comes from the Animated Connection Observer library
     val context = LocalContext.current
     var blurWhenOffline by remember { mutableStateOf(true) }
     var overlayWhenOffline by remember { mutableStateOf(true) }
 
-    // this composable comes from the Animated Connection Observer library
-    AnimatedConnectivityBox(
+
+    AnimatedConnectivityBox(                  // this composable comes from the Animated Connection Observer library
         modifier = Modifier.fillMaxSize(),
         isConnected = isConnected,
         blurWhenOffline = blurWhenOffline,
@@ -172,6 +174,7 @@ fun MainScreen(
                 checked = overlayState,
                 onCheckedChange = changeOverlayState,
             )
+            Spacer(modifier = Modifier.height(90.dp))
         }
     }
 }

@@ -33,7 +33,10 @@ fun WifiCard(
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(start = 24.dp, end = 24.dp, bottom = 24.dp, top = 10.dp).fillMaxWidth(),
+            modifier = Modifier
+                .padding(bottom = 24.dp, top = 10.dp)
+                .padding(horizontal = 24.dp)
+                .fillMaxWidth(),
         ) {
             Crossfade(
                 targetState = isConnected,

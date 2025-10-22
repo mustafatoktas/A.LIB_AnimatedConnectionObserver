@@ -33,7 +33,6 @@ fun RowWithSwitch(
     onClick: () -> Unit = {},
     isVisibleSwitch: Boolean = true,
     icon: ImageVector? = null,
-    tint: Color? = null,
 ) {
     Card(
         modifier = modifier,
@@ -52,7 +51,7 @@ fun RowWithSwitch(
                 Icon(
                     imageVector = it,
                     contentDescription = null,
-                    tint = tint ?: MaterialTheme.colorScheme.onSurface.copy(alpha = 0.65f),
+                    tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.65f),
                 )
                 Spacer(modifier = Modifier.width(8.dp))
             }
@@ -63,7 +62,7 @@ fun RowWithSwitch(
                 Text(
                     text = title,
                     style = MaterialTheme.typography.titleMedium,
-                    color = tint ?: Color.Unspecified,
+                    color = Color.Unspecified,
                 )
                 if(summary.isNotEmpty())
                     Text(

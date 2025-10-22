@@ -9,6 +9,8 @@
 .DS_Store
 gradle.properties
 settings.gradle.kts
+consumer-rules.pro
+proguard-rules.pro
 
 ## Klasör
 .gradle/

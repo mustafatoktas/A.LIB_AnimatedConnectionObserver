@@ -8,6 +8,11 @@ activityCompose = "1.11.0"
 coreSplashScreen = "1.0.1"
 # lifecycle
 lifecycleRuntimeCompose = "2.9.4"
+# vanniktech maven publish
+vanniktechMavenCentral = "0.34.0"
+# dokka
+dokka = "1.9.20"
+
 
 
 [libraries]
@@ -32,3 +37,7 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+# vanniktech maven publish
+vanniktech-maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktechMavenCentral" }
+# dokka
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
