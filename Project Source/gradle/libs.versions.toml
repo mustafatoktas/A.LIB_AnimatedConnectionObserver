@@ -1,21 +1,29 @@
 [versions]
-agp = "9.4.1"
-kotlin = "2.4.20"
+agp = "9.5.1"
+kotlin = "2.4.21"
 composeBom = "2026.09.00"
 activityCompose = "1.13.0"
+# splash screen
+coreSplashScreen = "1.2.0"
+# 3. parti ---------- 3. parti ---------- 3. parti ---------- 3. parti ---------- 3. parti ---------- 3. parti ----------
+# vanniktech maven publish
+vanniktechMavenCentral = "0.37.0"
+
 
 [libraries]
 androidx-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
-androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-# icons
-androidx-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended"}
+# splash screen
+androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplashScreen" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+# 3. parti ---------- 3. parti ---------- 3. parti ---------- 3. parti ---------- 3. parti ---------- 3. parti ----------
+# vanniktech maven publish
+vanniktech-maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktechMavenCentral" }

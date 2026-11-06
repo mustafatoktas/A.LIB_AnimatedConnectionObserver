@@ -6,8 +6,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.SignalWifiConnectedNoInternet4
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -17,8 +15,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.toktasoft.animatedconnectionobserver.R
 
 @Composable
 internal fun BottomCard(
@@ -50,7 +51,7 @@ internal fun BottomCard(
         ) {
             Icon(
                 modifier = Modifier.align(Alignment.Top),
-                imageVector = Icons.Default.SignalWifiConnectedNoInternet4,
+                imageVector = ImageVector.vectorResource(R.drawable.animated_connection_observer_ic_wifi_no_internet),
                 tint = textColor,
                 contentDescription = null,
             )

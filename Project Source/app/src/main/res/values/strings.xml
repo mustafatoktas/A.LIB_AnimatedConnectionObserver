@@ -1,3 +1,43 @@
 <resources>
-    <string name="app_name">AnimatedConnectionObserver</string>
+    <string name="app_name" translatable="false">Animated Connection Observer</string>
+
+    <!-- Live preview -->
+    <string name="message_offline">No internet connection</string>
+    <string name="message_back_online">Back online</string>
+    <string name="card_title_offline">Connection lost</string>
+    <string name="card_message_offline">Check your network settings and try again.</string>
+    <string name="open_network_settings">Open network settings</string>
+
+    <!-- Sample content inside the preview -->
+    <string name="demo_title">Sample content</string>
+    <string name="demo_button">Sample button · %1$d</string>
+    <string name="demo_description">While interaction is blocked, this button can\'t be pressed offline.</string>
+    <string name="demo_pending">Pending tasks</string>
+    <string name="demo_sync">Sync</string>
+
+    <!-- Connection source card -->
+    <string name="connection_source">Connection source</string>
+    <string name="device_connection">Device: %1$s</string>
+    <string name="source_real">Real network</string>
+    <string name="source_simulated">Simulation</string>
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
+
+    <!-- Component settings card -->
+    <string name="settings_title">Component settings</string>
+    <string name="settings_reset">Reset</string>
+    <string name="settings_blur">Blur when offline</string>
+    <string name="settings_blur_radius">Blur radius</string>
+    <string name="settings_overlay">Block interaction when offline</string>
+    <string name="settings_overlay_alpha">Overlay opacity</string>
+    <string name="settings_card_animation">Card animation</string>
+    <string name="settings_hint">The preview updates as you change the settings.</string>
+    <string name="damping_high">Very bouncy</string>
+    <string name="damping_medium_high">Bouncy</string>
+    <string name="damping_medium">Balanced</string>
+    <string name="damping_low">Soft</string>
+
+    <!-- Units. Turkish puts the percent sign first (%10), English after (10%). -->
+    <string name="dp_value" translatable="false">%1$d dp</string>
+    <string name="percent_value">%1$d%%</string>
 </resources>

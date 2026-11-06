@@ -5,23 +5,24 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.Warning
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.toktasoft.animatedconnectionobserver.R
 import com.toktasoft.animatedconnectionobserver.common.DampingRatioBouncy
 import com.toktasoft.animatedconnectionobserver.common.slideInFromBottom
 import com.toktasoft.animatedconnectionobserver.common.slideOutToBottom
 import kotlinx.coroutines.delay
+import kotlin.time.Duration.Companion.milliseconds
 
 @Composable
 fun AnimatedConnectivityBox(
@@ -61,7 +62,10 @@ fun AnimatedConnectivityBox(
         messageBarBackgroundColorError = messageBarErrorColor,
     )
 
-    val topMessageBarImageVector = if (isConnected) Icons.Default.Check else Icons.Default.Warning
+    val topMessageBarImageVector = ImageVector.vectorResource(
+        if (isConnected) R.drawable.animated_connection_observer_ic_check
+        else R.drawable.animated_connection_observer_ic_warning
+    )
     val messageBarMessage = if (isConnected) messageBarMessageBackOnline else messageBarMessageOffline
 
     val density = LocalDensity.current
@@ -70,15 +74,15 @@ fun AnimatedConnectivityBox(
     LaunchedEffect(isConnected) {
         when (isConnected) {
             true -> {
-                delay(messageBarDelay)
+                delay(messageBarDelay.milliseconds)
                 cardVisible = false
-                delay(cardDelay)
+                delay(cardDelay.milliseconds)
                 messageBarVisible = false
             }
             false -> {
-                delay(messageBarDelay)
+                delay(messageBarDelay.milliseconds)
                 messageBarVisible = true
-                delay(cardDelay)
+                delay(cardDelay.milliseconds)
                 cardVisible = true
             }
         }

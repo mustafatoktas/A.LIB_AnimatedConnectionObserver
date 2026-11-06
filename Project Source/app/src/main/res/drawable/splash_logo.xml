@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Splash screen icon: a Wi-Fi mark in the Toktasoft green-to-blue gradient on a light squircle.
+     288x288 dp with no icon background, so the visible part stays inside the 192 dp mask circle.
+     VectorPath and VectorRaster are ignored: 288 dp is the size the splash screen guidelines require,
+     and this fixed artwork is drawn only once on the splash screen. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:width="288dp"
+    android:height="288dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512"
+    tools:ignore="VectorPath,VectorRaster">
+    <!-- Squircle -->
+    <path
+        android:fillColor="#FFE9F4FB"
+        android:pathData="M381,256C381,274.65 378.99,293.32 374.85,311.5C373.77,316.27 372.71,321.03 370.68,325.5C366.1,335.6 359.96,344.27 352.11,352.11C344.27,359.96 335.6,366.1 325.5,370.68C321.03,372.71 316.27,373.77 311.5,374.85C293.32,378.99 274.65,381 256,381C237.35,381 218.68,378.99 200.5,374.85C195.73,373.77 190.97,372.71 186.5,370.68C176.4,366.1 167.73,359.96 159.89,352.11C152.04,344.27 145.9,335.6 141.32,325.5C139.29,321.03 138.23,316.27 137.15,311.5C133.01,293.32 131,274.65 131,256C131,237.35 133.01,218.68 137.15,200.5C138.23,195.73 139.29,190.97 141.32,186.5C145.9,176.4 152.04,167.73 159.89,159.89C167.73,152.04 176.4,145.9 186.5,141.32C190.97,139.29 195.73,138.23 200.5,137.15C218.68,133.01 237.35,131 256,131C274.65,131 293.32,133.01 311.5,137.15C316.27,138.23 321.03,139.29 325.5,141.32C335.6,145.9 344.27,152.04 352.11,159.89C359.96,167.73 366.1,176.4 370.68,186.5C372.71,190.97 373.77,195.73 374.85,200.5C378.99,218.68 381,237.35 381,256Z" />
+    <!-- Wi-Fi mark -->
+    <path
+        android:strokeWidth="20"
+        android:strokeLineCap="round"
+        android:pathData="M176.8,232.8A112,112 0 0,1 335.2,232.8M202.26,258.26A76,76 0 0,1 309.74,258.26M227.72,283.72A40,40 0 0,1 284.28,283.72">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:type="linear"
+                android:startX="256"
+                android:startY="190"
+                android:endX="256"
+                android:endY="326"
+                android:startColor="#FF33CC99"
+                android:endColor="#FF0062FF" />
+        </aapt:attr>
+    </path>
+    <path android:pathData="M256,298a14,14 0 1,1 0,28a14,14 0 1,1 0,-28z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="256"
+                android:startY="190"
+                android:endX="256"
+                android:endY="326"
+                android:startColor="#FF33CC99"
+                android:endColor="#FF0062FF" />
+        </aapt:attr>
+    </path>
+</vector>

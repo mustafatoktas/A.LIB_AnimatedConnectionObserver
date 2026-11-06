@@ -1,0 +1,40 @@
+<resources>
+    <!-- Canlı önizleme -->
+    <string name="message_offline">İnternet bağlantısı yok</string>
+    <string name="message_back_online">Yeniden çevrimiçisin</string>
+    <string name="card_title_offline">Bağlantı kesildi</string>
+    <string name="card_message_offline">Ağ ayarlarını kontrol edip tekrar deneyebilirsin.</string>
+    <string name="open_network_settings">Ağ ayarlarını aç</string>
+
+    <!-- Önizlemedeki örnek içerik -->
+    <string name="demo_title">Örnek içerik</string>
+    <string name="demo_button">Örnek buton · %1$d</string>
+    <string name="demo_description">Etkileşim engeli açıkken çevrimdışı durumda bu butona basılamaz.</string>
+    <string name="demo_pending">Bekleyen işlem</string>
+    <string name="demo_sync">Senkronizasyon</string>
+
+    <!-- Bağlantı kaynağı kartı -->
+    <string name="connection_source">Bağlantı kaynağı</string>
+    <string name="device_connection">Cihaz: %1$s</string>
+    <string name="source_real">Gerçek ağ</string>
+    <string name="source_simulated">Simülasyon</string>
+    <string name="online">Çevrimiçi</string>
+    <string name="offline">Çevrimdışı</string>
+
+    <!-- Bileşen ayarları kartı -->
+    <string name="settings_title">Bileşen ayarları</string>
+    <string name="settings_reset">Sıfırla</string>
+    <string name="settings_blur">Çevrimdışıyken bulanıklaştır</string>
+    <string name="settings_blur_radius">Bulanıklık yarıçapı</string>
+    <string name="settings_overlay">Çevrimdışıyken etkileşimi engelle</string>
+    <string name="settings_overlay_alpha">Engel katmanı opaklığı</string>
+    <string name="settings_card_animation">Kart animasyonu</string>
+    <string name="settings_hint">Ayarları değiştirirken önizleme anında güncellenir.</string>
+    <string name="damping_high">Çok hareketli</string>
+    <string name="damping_medium_high">Hareketli</string>
+    <string name="damping_medium">Dengeli</string>
+    <string name="damping_low">Yumuşak</string>
+
+    <!-- Birimler -->
+    <string name="percent_value">%%%1$d</string>
+</resources>

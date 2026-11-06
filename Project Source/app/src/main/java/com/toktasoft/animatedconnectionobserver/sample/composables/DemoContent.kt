@@ -11,8 +11,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.toktasoft.animatedconnectionobserver.sample.R
+import com.toktasoft.animatedconnectionobserver.sample.functions.percentLabel
 
 @Composable
 internal fun DemoContent(
@@ -20,23 +23,23 @@ internal fun DemoContent(
     onButtonClick: () -> Unit,
 ) {
     Column(
+        verticalArrangement = Arrangement.spacedBy(14.dp),
         modifier = Modifier
             .fillMaxSize()
             .padding(20.dp),
-        verticalArrangement = Arrangement.spacedBy(14.dp),
     ) {
         Text(
-            text = "Örnek içerik",
+            text = stringResource(R.string.demo_title),
             style = MaterialTheme.typography.headlineSmall,
             fontWeight = FontWeight.Bold,
         )
         Button(
             onClick = onButtonClick,
         ) {
-            Text("Örnek buton · $clickCount")
+            Text(text = stringResource(R.string.demo_button, clickCount))
         }
         Text(
-            text = "Etkileşim engeli açıkken çevrimdışı durumda bu butona basılamaz.",
+            text = stringResource(R.string.demo_description),
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         Row(
@@ -46,12 +49,12 @@ internal fun DemoContent(
             DemoMetric(
                 modifier = Modifier.weight(1f),
                 value = "24",
-                label = "Bekleyen işlem",
+                label = stringResource(R.string.demo_pending),
             )
             DemoMetric(
                 modifier = Modifier.weight(1f),
-                value = "%98",
-                label = "Senkronizasyon",
+                value = percentLabel(98),
+                label = stringResource(R.string.demo_sync),
             )
         }
     }
