@@ -9,7 +9,6 @@ Android 13 (API 33) ve üzeri, Jetpack Compose ve Material 3 gerekir.
 **Doğrudan ekleme**
 
 ```kotlin
-// app/build.gradle.kts
 dependencies {
     implementation("com.toktasoft:animated-connection-observer:1.0.2")
 }
